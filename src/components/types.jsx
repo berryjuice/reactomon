@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
+import Navbar from "./navbar";
+
 class Types extends Component {
   state = {
     pokemonTypes: [],
@@ -19,9 +21,10 @@ class Types extends Component {
   render() {
     return (
       <div>
-        <Link to="/">Home</Link> | <Link to="/pokemons">Pokemons</Link>
+        <Navbar />
+        <h1 style={{ marginLeft: "20px" }}>Types</h1>
         {this.state.pokemonTypes.map((pokemonType) => (
-          <li>{pokemonType.name}</li>
+          <li style={{ marginLeft: "20px" }}>{pokemonType.name}</li>
         ))}
       </div>
     );

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import Navbar from "./navbar";
 
 class Pokemons extends Component {
   state = {
@@ -24,12 +25,13 @@ class Pokemons extends Component {
   render() {
     return (
       <div>
-        <Link to="/">Home</Link> | <Link to="/types">Types</Link>
+        <Navbar />
+        <h1 style={{ marginLeft: "20px" }}>Pokemons</h1>
         {this.state.pokemons.map((pokemon) => (
           <div>
-            <p>
+            <li style={{ marginLeft: "20px" }}>
               <Link to={`pokemon/${pokemon.id}`}>{pokemon.name}</Link>
-            </p>
+            </li>
           </div>
         ))}
       </div>

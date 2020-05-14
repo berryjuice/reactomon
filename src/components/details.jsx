@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
+import Navbar from "./navbar";
+
 class Details extends Component {
   state = { types: [] };
 
@@ -15,22 +17,35 @@ class Details extends Component {
         tempTypes.push(t.type.name);
       });
       this.setState({ types: tempTypes });
+      res.data.forms.map((e) => {
+        this.setState({
+          name: e.name,
+        });
+      });
     });
   }
 
   render() {
     return (
       <div>
-        <Link to="/pokemons">Pokemons</Link>
+        <Navbar />
         {/* <h1>Base experience:</h1>
         <h4>{this.state.base_experience}</h4> */}
         {/* <h1>Abilities:</h1>
         {this.state.abilityNames.map((name) => (
           <li key={name}>{name}</li>
         ))} */}
-        <h1>Types:</h1>
+        <h1
+          className="badge m-2 badge-primary"
+          style={{ marginLeft: "20px", fontSize: 36 }}
+        >
+          {this.state.name}
+        </h1>
+        <h1 style={{ marginLeft: "20px" }}>Types:</h1>
         {this.state.types.map((t) => (
-          <li key={t}>{t}</li>
+          <li style={{ marginLeft: "20px" }} key={t}>
+            {t}
+          </li>
         ))}
       </div>
     );
