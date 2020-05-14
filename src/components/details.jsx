@@ -21,6 +21,7 @@ class Details extends Component {
         this.setState({
           name: e.name,
         });
+        this.setState({ img: res.data.sprites.back_shiny });
       });
     });
   }
@@ -41,6 +42,9 @@ class Details extends Component {
         >
           {this.state.name}
         </h1>
+        <div>
+          <img src={this.state.img} height="150 px"></img>
+        </div>
         <h1 style={{ marginLeft: "20px" }}>Types:</h1>
         {this.state.types.map((t) => (
           <li style={{ marginLeft: "20px" }} key={t}>

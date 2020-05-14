@@ -9,7 +9,10 @@ class Home extends Component {
     return (
       <div>
         <Navbar />
-        <h1>Homepage</h1>
+        <img
+          src="https://kep.cdn.index.hu/1/0/1224/12244/122447/12244797_468307_4aed9913b1db88617e8fc19623cb96f6_wm.jpg"
+          className="img-fluid rounded mx-auto d-block w-50 p-5"
+        ></img>
       </div>
     );
   }

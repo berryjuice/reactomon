@@ -7,7 +7,7 @@ class Navbar extends Component {
   render() {
     return (
       <div>
-        <nav className="navbar navbar-expand-sm bg-light sticky-top">
+        <nav className="navbar navbar-expand-sm bg-light fixed-top sticky-top">
           <ul className="navbar-nav">
             <li className="nav-item">
               <div className="nav-link">
