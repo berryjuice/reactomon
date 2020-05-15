@@ -7,7 +7,10 @@ class Navbar extends Component {
   render() {
     return (
       <div>
-        <nav className="navbar navbar-expand-sm bg-light fixed-top sticky-top">
+        <nav
+          className="navbar navbar-expand-md navbar-light bg-light"
+          style={{ position: "fixed", top: 0, width: "100%" }}
+        >
           <ul className="navbar-nav">
             <li className="nav-item">
               <div className="nav-link">
